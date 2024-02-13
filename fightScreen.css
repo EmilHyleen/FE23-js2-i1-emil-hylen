@@ -1,0 +1,32 @@
+.fightDisplay
+{
+    width: 100vw;
+    height: 80vh;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+#p1NameDisplay, #p1HealthDisplay, #p2NameDisplay, #p2HealthDisplay, #announcer
+{
+    text-align: center;
+}
+
+.left, .right
+{
+    width: 50vw;
+    margin: auto;
+}
+
+.p1MoveButtons, .p2MoveButtons, .menuButtons
+{
+    justify-content: center;
+    display: flex;
+}
