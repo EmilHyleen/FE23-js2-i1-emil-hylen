@@ -5,7 +5,6 @@ export default class Fighter {
         this.name = name;
         this.health = health;
         this.moves = moves;
-        addAttackButtons();
     }
 
     
@@ -37,32 +36,7 @@ export default class Fighter {
     }
 }
 
-class Move {
-    constructor(name, damage) {
-        this.name = name;
-        this.damage = damage;
-    }
-}
 
-export class Emil extends Fighter {
-    constructor(player1Or2) {
-        this.player1Or2 = player1Or2;
-        const moves = [];
-        
-        moves.push(new Move('punch', 25));
-        moves.push(new Move('kick', 15));
-        super(player1Or2, 'Emil', 100, moves);
-    }
-}
 
-export class Felix extends Fighter {
-    constructor(player1Or2) {
-        this.player1Or2 = player1Or2;
 
-        const moves = [];
-        
-        moves.push(new Move('throw', 17));
-        moves.push(new Move('step', 22));
-        super(player1Or2, 'Felix', 100, moves);
-    }
-}
+

@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="fightScreen.css">
 
-    <script type="text/javascript" src="fightScreen.js" defer></script>
+    <script type="module" src="fightScreen.js" defer></script>
 </head>
 <body>
     <div class="fightDisplay">
@@ -17,8 +17,7 @@
             <h1 id="p1NameDisplay"></h1>
             <h2 id="p1HealthDisplay"></h2>
             <div class="p1MoveButtons">
-                <button id="p1AttackBtn" onclick="P1Attack()"></button>
-                <button id="p1PowerUpBtn" onclick="P1PowerUp()">Power Up</button>
+                
             </div>
         </div>
         <div class="right">
@@ -26,8 +25,7 @@
             <h1 id="p2NameDisplay"></h1>
             <h2 id="p2HealthDisplay"></h2>
             <div class="p2MoveButtons">
-                <button id="p2AttackBtn" onclick="P2Attack()"></button>
-                <button id="p2PowerUpBtn" onclick="P2PowerUp()">Power Up</button>
+                
             </div>
         </div>
     </div>
@@ -36,7 +34,7 @@
         <a href="index.html">
             <button>Quit To Menu</button>
         </a>
-        <button onclick="ResetGame()">Reset</button>
+        
     </div>
 </body>
 </html>
