@@ -6,6 +6,11 @@ export default class Fighter {
         this.moves = moves;
     }
 
+    
+    TakeDamage(move) {
+        this.health -= damage;
+    }
+    
     logFighterSpecs(){
         console.log(`
         Species: ${this.species} \n
@@ -14,11 +19,6 @@ export default class Fighter {
         Health: ${this.health} 
         `)
     }
-
-    TakeDamage(damage) {
-        this.health -= damage;
-    }
-
 }
 
 class Move {
@@ -30,20 +30,20 @@ class Move {
 
 export class Emil extends Fighter {
     constructor() {
-        this.name = 'Emil';
-        this.health = 100;
-
-        this.moves.push(new Move('punch', 25));
-        this.moves.push(new Move('kick', 15));
+        const moves = [];
+        
+        moves.push(new Move('punch', 25));
+        moves.push(new Move('kick', 15));
+        super('Emil', 100, moves);
     }
 }
 
 export class Felix extends Fighter {
     constructor() {
-        this.name = 'Felix';
-        this.health = 100;
-
-        this.moves.push(new Move('punch', 25));
-        this.moves.push(new Move('kick', 15));
+        const moves = [];
+        
+        moves.push(new Move('throw', 17));
+        moves.push(new Move('step', 22));
+        super('Felix', 100, moves);
     }
 }
