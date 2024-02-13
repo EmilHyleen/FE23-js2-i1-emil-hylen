@@ -1,4 +1,8 @@
-//FIXME: This data needs to come from classes
+import Fighter from "./modules/Fighter.js";
+
+let emil = new Emil();
+let felix = new Felix();
+
 let p1Name = "Emil";
 let p1Health = 100;
 let p1AttackDmg = 25;
