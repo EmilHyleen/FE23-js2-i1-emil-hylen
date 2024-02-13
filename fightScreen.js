@@ -1,3 +1,5 @@
+import Emil from "./modules/Fighter.js";
+import Felix from "./modules/Fighter.js";
 import Fighter from "./modules/Fighter.js";
 
 let emil = new Emil();
