@@ -1,5 +1,6 @@
 import Emil from "./modules/Emil.js";
 import Felix from "./modules/Felix.js";
+import GameManager from "./modules/GameManager.js";
 
 const emil = new Emil(1);
 const felix = new Felix(2);
@@ -9,6 +10,9 @@ felix.addMoveButtons();
 
 const p1ButtonsContainer = document.querySelector('.p1MoveButtons');
 const p2ButtonsContainer = document.querySelector('.p2MoveButtons');
+
+const gameManager = new GameManager(p1ButtonsContainer, p2ButtonsContainer);
+gameManager.FlipTurn();
 
 p1ButtonsContainer.addEventListener('click', EvaluateDamage);
 p2ButtonsContainer.addEventListener('click', EvaluateDamage);
@@ -34,8 +38,9 @@ function EvaluateDamage({target})
         default:
             console.log("Something went very wrong, PlayerID not recognized");
     }
-target
+    
     UpdateDisplay();
+    gameManager.FlipTurn();
 }
 
 function UpdateDisplay()
