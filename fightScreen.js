@@ -1,6 +1,7 @@
 import Emil from "./modules/Emil.js";
 import Felix from "./modules/Felix.js";
 import Clara from "./modules/Clara.js";
+import GameManager from "./modules/GameManager.js";
 const searchParams = new URLSearchParams(window.location.href);
 const class1 = searchParams.get('class1');
 const class2 = searchParams.get('class2');
