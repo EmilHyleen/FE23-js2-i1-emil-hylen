@@ -31,24 +31,22 @@
     display: flex;
 }
 
-.p1Circle 
+.p1Circle
 {
-    display: inline-flex;
-    border-radius: 50%;
-    height: 500px;
-    width: 500px;
-    margin: 0;
-    z-index: -1;
     background: radial-gradient(circle at 100px 100px, #5cabff, #3200e4);
 }
 
-.p2Circle 
+.p2Circle
+{
+    background: radial-gradient(circle at 100px 100px, #eb434b, #750010);
+}
+
+.p1Circle, .p2Circle 
 {
     display: inline-flex;
     border-radius: 50%;
-    height: 500px;
-    width: 500px;
-    margin: 0;
+    height: 50vh;
+    width: 50vh;
+    margin: auto;
     z-index: -1;
-    background: radial-gradient(circle at 100px 100px, #eb434b, #750010);
 }
