@@ -1,11 +1,21 @@
-import Emil from "./modules/Fighter.js";
-import Felix from "./modules/Fighter.js";
+import Emil from "./modules/Emil.js";
+import Felix from "./modules/Felix.js";
 
-let emil = new Emil();
-let felix = new Felix();
+const emil = new Emil(1);
+const felix = new Felix(2);
+
+emil.addMoveButtons();
+felix.addMoveButtons();
+
+const p1ButtonsContainer = document.querySelector('.p1MoveButtons');
+const p2ButtonsContainer = document.querySelector('.p2MoveButtons');
 
 p1ButtonsContainer.addEventListener('click', EvaluateDamage);
 p2ButtonsContainer.addEventListener('click', EvaluateDamage);
+
+function logTest() {
+    console.log('This is a test');
+}
 
 function EvaluateDamage({target})
 {
@@ -24,6 +34,7 @@ function EvaluateDamage({target})
         default:
             console.log("Something went very wrong, PlayerID not recognized");
     }
+target
     UpdateDisplay();
 }
 
