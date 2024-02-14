@@ -60,10 +60,10 @@ function EvaluateDamage({target})
     switch(AttackingPlayerID)
     {
         case 1:
-            felix.takeDamage(Damage);
+            character2Instance.takeDamage(Damage);
             break;
         case 2:
-            emil.takeDamage(Damage);
+            character1Instance.takeDamage(Damage);
             break;
         default:
             console.log("Something went very wrong, PlayerID not recognized");
