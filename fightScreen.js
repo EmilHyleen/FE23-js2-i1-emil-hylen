@@ -69,13 +69,19 @@ function EvaluateDamage({target})
             console.log("Something went very wrong, PlayerID not recognized");
     }
     
-    UpdateDisplay();
     gameManager.FlipTurn();
+    UpdateDisplay();
 }
 
 function UpdateDisplay()
 {
     const AnnouncerElem = document.getElementById("announcer");
+
+    document.getElementById("p1NameDisplay").innerText = character1Instance.name;
+    document.getElementById("p2NameDisplay").innerText = character2Instance.name;
+    document.getElementById("p1HealthDisplay").innerText = 'Health: ' + character1Instance.health;
+    document.getElementById("p2HealthDisplay").innerText = 'Health: ' + character2Instance.health;
+
     if (AnnouncerElem.innerText == "")
     {
         AnnouncerElem.innerText = "cool favourite animal!"
@@ -88,15 +94,14 @@ function UpdateDisplay()
     if (character1Instance.isDead())
     {
         AnnouncerElem.innerText = character2Instance.name + " wins!";
+        document.getElementById("p1HealthDisplay").innerText = 'KO';
+        gameManager.DisableAllButtons();
     }
     else if (character2Instance.isDead())
     {
         AnnouncerElem.innerText = character1Instance.name + " wins!";
+        document.getElementById("p2HealthDisplay").innerText = 'KO';
+        gameManager.DisableAllButtons();
     }
-
-    document.getElementById("p1NameDisplay").innerText = character1Instance.name;
-    document.getElementById("p2NameDisplay").innerText = character2Instance.name;
-    document.getElementById("p1HealthDisplay").innerText = 'Health: ' + character1Instance.health;
-    document.getElementById("p2HealthDisplay").innerText = 'Health: ' + character2Instance.health;
 }
 UpdateDisplay();
