@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tekken Grit</title>
     <script src="main.js" type="module" defer></script>
-</head>
-<body>
-    <div class="character1">
+  </head>
+  <body>
+    <form action="fightScreen.html">
+        <div class="clara-dont-look"  >
+          Favorite Animal:
+          <select name="classTest" id="classtest">
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Chameleon">Chameleon</option>
+          </select>
+        </div>
+      <div class="character1">
         Player1:
-        <select name="class" id="class">
-            <option value="Emil">Emil</option>
-            <option value="Felix">Felix</option>
-            <option value="Clara">Clara</option>
+        <select name="class1" id="class1">
+          <option value="Emil">Emil</option>
+          <option value="Felix">Felix</option>
+          <option value="Clara">Clara</option>
         </select>
-    </div>
-    <div class="character2">
+      </div>
+      <div class="character2">
         Player2:
-        <select name="class" id="class">
-            <option value="Emil">Emil</option>
-            <option value="Felix" selected>Felix</option>
-            <option value="Clara">Clara</option>
+        <select name="class2" id="class2">
+          <option value="Emil">Emil</option>
+          <option value="Felix" selected>Felix</option>
+          <option value="Clara">Clara</option>
         </select>
-    </div>
+      </div>
 
-    <a href="fightScreen.html">
-        <button>Fight!</button>
-    </a>
-</body>
+      <button>Submit!</button>
+    </form>
+  </body>
 </html>
