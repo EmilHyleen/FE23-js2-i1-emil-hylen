@@ -1,6 +1,7 @@
 import Emil from "./modules/Emil.js";
 import Felix from "./modules/Felix.js";
 import Clara from "./modules/Clara.js";
+
 const searchParams = new URLSearchParams(window.location.href);
 const class1 = searchParams.get('class1');
 const class2 = searchParams.get('class2');
@@ -39,14 +40,11 @@ switch (class2) {
 character1Instance.addMoveButtons();
 character2Instance.addMoveButtons();
 
-const p1ButtonsContainer = document.querySelector(".p1MoveButtons");
-const p2ButtonsContainer = document.querySelector(".p2MoveButtons");
-
-const gameManager = new GameManager(p1ButtonsContainer, p2ButtonsContainer);
+const gameManager = new GameManager();
 gameManager.FlipTurn();
 
-p1ButtonsContainer.addEventListener('click', EvaluateDamage);
-p2ButtonsContainer.addEventListener('click', EvaluateDamage);
+gameManager.p1ButtonsParent.addEventListener('click', EvaluateDamage);
+gameManager.p2ButtonsParent.addEventListener('click', EvaluateDamage);
 
 function logTest() {
   console.log("This is a test");
@@ -77,6 +75,15 @@ function EvaluateDamage({target})
 function UpdateDisplay()
 {
     const AnnouncerElem = document.getElementById("announcer");
+    if (AnnouncerElem.innerText == "")
+    {
+        AnnouncerElem.innerText = "cool favourite animal!"
+    }
+    else
+    {
+        AnnouncerElem.innerText = "Fight!";
+    }
+
     if (emil.isDead())
     {
         AnnouncerElem.innerText = felix.name + " wins!";
@@ -84,10 +91,6 @@ function UpdateDisplay()
     else if (felix.isDead())
     {
         AnnouncerElem.innerText = emil.name + " wins!";
-    }
-    else
-    {
-        AnnouncerElem.innerText = "Fight!";
     }
 
     document.getElementById("p1NameDisplay").innerText = emil.name;
