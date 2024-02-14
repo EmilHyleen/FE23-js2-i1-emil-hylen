@@ -1,6 +1,7 @@
 import Emil from "./modules/Emil.js";
 import Felix from "./modules/Felix.js";
 import Clara from "./modules/Clara.js";
+import GameManager from "./modules/GameManager.js";
 
 const searchParams = new URLSearchParams(window.location.href);
 const class1 = searchParams.get('class1');
@@ -84,18 +85,18 @@ function UpdateDisplay()
         AnnouncerElem.innerText = "Fight!";
     }
 
-    if (emil.isDead())
+    if (character1Instance.isDead())
     {
-        AnnouncerElem.innerText = felix.name + " wins!";
+        AnnouncerElem.innerText = character2Instance.name + " wins!";
     }
-    else if (felix.isDead())
+    else if (character2Instance.isDead())
     {
-        AnnouncerElem.innerText = emil.name + " wins!";
+        AnnouncerElem.innerText = character1Instance.name + " wins!";
     }
 
-    document.getElementById("p1NameDisplay").innerText = emil.name;
-    document.getElementById("p2NameDisplay").innerText = felix.name;
-    document.getElementById("p1HealthDisplay").innerText = 'Health: ' + emil.health;
-    document.getElementById("p2HealthDisplay").innerText = 'Health: ' + felix.health;
+    document.getElementById("p1NameDisplay").innerText = character1Instance.name;
+    document.getElementById("p2NameDisplay").innerText = character2Instance.name;
+    document.getElementById("p1HealthDisplay").innerText = 'Health: ' + character1Instance.health;
+    document.getElementById("p2HealthDisplay").innerText = 'Health: ' + character2Instance.health;
 }
 UpdateDisplay();
