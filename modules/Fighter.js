@@ -11,6 +11,11 @@ export default class Fighter {
     takeDamage(lostDamage) {
         this.health -= lostDamage;
     }
+
+    isDead()
+    {
+        return this.health <= 0;
+    }
     
     addMoveButtons() {
         const container = document.querySelector('.p' + this.player1Or2 + 'MoveButtons');
